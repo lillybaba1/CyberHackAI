@@ -1,7 +1,9 @@
 import os
 
 # Create project structure for Streamlit Cloud deployment
-#os.makedirs("/mnt/data/CyberHackAI", exist_ok=True)
+os.makedirs("./CyberHackAI", exist_ok=True)
+...
+with open("./CyberHackAI/app.py", "w") as f:
 
 # Write example app.py content
 app_py = '''
