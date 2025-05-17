@@ -1,7 +1,3 @@
-import os
-
-# Create project structure for Streamlit Cloud deployment
-
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -38,25 +34,3 @@ if st.button("🧠 Predict"):
     prediction = model.predict(X)
     result = "🔒 Normal" if prediction[0][0] < 0.5 else "⚠️ Intrusion"
     st.success(f"Prediction: {result}")
-'''
-
-#with open("/mnt/data/CyberHackAI/app.py", "w") as f:
-    f.write(app_py)
-
-# Create requirements.txt
-requirements = '''streamlit
-tensorflow
-numpy
-'''
-#with open("/mnt/data/CyberHackAI/requirements.txt", "w") as f:
-    f.write(requirements)
-
-# Create README
-readme = '''# CyberHackAI
-Streamlit app for intrusion detection using a trained Keras model.
-'''
-with open("/mnt/data/CyberHackAI/README.md", "w") as f:
-    f.write(readme)
-
-# Show folder contents to user
-os.listdir("/mnt/data/CyberHackAI")
