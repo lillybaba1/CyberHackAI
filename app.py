@@ -6,19 +6,21 @@ from transformers import pipeline
 st.set_page_config(page_title="CyberHackAI", layout="wide")
 st.title("🤖 CyberHackAI: Intrusion Detection System Made By Alasan")
 
+# ✅ Load IDS Model
+@st.cache_resource
+def load_ids_model():
+    return tf.keras.models.load_model("cyberhack_ai_model.keras")
 
 model = load_ids_model()
 
-# Load model
-@st.cache_resourcest.cache_resource
+# ✅ Load Chatbot Model
+@st.cache_resource
 def load_chatbot():
     return pipeline("text2text-generation", model="google/flan-t5-base")
 
 chatbot = load_chatbot()
 
-
-
-# Sidebar chat
+# ✅ Sidebar Chatbot
 with st.sidebar:
     st.header("💬 CyberHackAI Chatbot")
     chat_history = st.session_state.get("chat_history", [])
@@ -33,8 +35,7 @@ with st.sidebar:
     for speaker, text in chat_history[-6:]:
         st.markdown(f"**{speaker}:** {text}")
 
-
-# Main form
+# ✅ Main IDS Form
 st.subheader("📥 Manually Enter 41 Features")
 inputs = [st.number_input(f"Feature f{i}", value=0.0) for i in range(41)]
 
