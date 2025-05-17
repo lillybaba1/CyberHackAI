@@ -1,10 +1,7 @@
 import os
 
 # Create project structure for Streamlit Cloud deployment
-os.makedirs("./CyberHackAI", exist_ok=True)
-...
-with open("./CyberHackAI/app.py", "w") as f:
-    app_py = '''
+
 import streamlit as st
 import tensorflow as tf
 import numpy as np
