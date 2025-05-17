@@ -40,7 +40,7 @@ if st.button("🧠 Predict"):
     st.success(f"Prediction: {result}")
 '''
 
-with open("/mnt/data/CyberHackAI/app.py", "w") as f:
+#with open("/mnt/data/CyberHackAI/app.py", "w") as f:
     f.write(app_py)
 
 # Create requirements.txt
@@ -48,7 +48,7 @@ requirements = '''streamlit
 tensorflow
 numpy
 '''
-with open("/mnt/data/CyberHackAI/requirements.txt", "w") as f:
+#with open("/mnt/data/CyberHackAI/requirements.txt", "w") as f:
     f.write(requirements)
 
 # Create README
