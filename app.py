@@ -4,9 +4,7 @@ import os
 os.makedirs("./CyberHackAI", exist_ok=True)
 ...
 with open("./CyberHackAI/app.py", "w") as f:
-
-# Write example app.py content
-app_py = '''
+    app_py = '''
 import streamlit as st
 import tensorflow as tf
 import numpy as np
